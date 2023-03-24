@@ -169,3 +169,59 @@ Increased complexity as forms grow in size: As the size of the form grows, uncon
 
     useState makes a component render everytime the state is updated
     but in useRef the component is not rendered
+
+
+    > Prop drilling
+    > useContext
+    > custom hook
+    > useRef
+
+
+
+    useContext: 
+    1) Creating context
+    2) Exporting useContext
+    3) Subscribing to the context
+
+    4) Using the context
+
+
+
+    ===================================== WEEKEND CHALLENGE =====================================
+
+    > Create 2 component one parent and one child 
+    > Import the child in parent component and pass the props from parent to child
+
+
+
+    >> pass props from Child to Parent ????????????????????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    reduce method: 
+    const numbers = [1, -1, 2, 3];
+let sum = 0;
+for (let n of numbers)
+sum += n;
+console.log(sum);
+const sum = numbers.reduce((accumulator, currentValue) => {
+return accumulator + currentValue;
+}, 0);

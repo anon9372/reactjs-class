@@ -1,33 +1,36 @@
 import React, { useEffect, useState } from 'react'
+import useFetch from './useFetch'
 const url = 'https://api.github.com/users/QuincyLarson'
 
 const FetchData = () => {
-    const [isLoading, setIsLoading] = useState(true)
-    const [isError, setIsError] = useState(false)
-    const [user, setUser] = useState(null)
 
+    // const [isLoading, setIsLoading] = useState(true)
+    // const [isError, setIsError] = useState(false)
+    // const [user, setUser] = useState(null)
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const resp = await fetch(url)
-                if (!resp.ok) {
-                    setIsError(true)
-                    setIsLoading(false)
-                    return
-                }
+    const { isLoading, isError, data } = useFetch(url)
 
-                const user = await resp.json()
-                setUser(user)
-            }
-            catch (err) {
-                console.log(err)
-                setIsError(true)
-            }
-        }
+    // useEffect(() => {
+    //     const fetchUser = async () => {
+    //         try {
+    //             const resp = await fetch(url)
+    //             if (!resp.ok) {
+    //                 setIsError(true)
+    //                 setIsLoading(false)
+    //                 return
+    //             }
 
-        fetchUser()
-    })
+    //             const user = await resp.json()
+    //             setUser(user)
+    //         }
+    //         catch (err) {
+    //             console.log(err)
+    //             setIsError(true)
+    //         }
+    //     }
+
+    //     fetchUser()
+    // })
 
     if (isLoading) {
         return <h2> Loading.....</h2>
@@ -37,7 +40,8 @@ const FetchData = () => {
         return <h2>Page cannot be found....</h2>
     }
 
-    const { avatar_url, bio, name, company } = user
+    console.log('hello user', data)
+    const { avatar_url, bio, name, company } = data
     return (
         <div>
             <img src={avatar_url} alt={name} />

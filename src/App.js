@@ -14,6 +14,10 @@ import Uncontrolled from './forms/02-un-controlled'
 import FormsChallenge from './forms/03-forms-challenge'
 // import UseRefBasics from './useRef/useRefBasic';
 import ToggleExample from './custome-hook/01-toggle';
+import Navbar from './useContext/Navbar'
+import UseRefBasics from './useRef/01-useRef';
+import UseFetch from './custome-hook/02-fetch-data'
+import ParentComponent from './weekend Test/parentComponent'
 function App() {
 
 
@@ -32,7 +36,11 @@ function App() {
       {/* <FormsChallenge /> */}
       {/* <OtherInputs /> */}
       {/* <UseRefBasics /> */}
-      <ToggleExample />
+      {/* <ToggleExample />  */}
+      {/* <Navbar /> */}
+      {/* <UseRefBasics /> */}
+      {/* <UseFetch />  */}
+      <ParentComponent />
     </div>
   );
 }
